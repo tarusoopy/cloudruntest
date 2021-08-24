@@ -11,7 +11,7 @@ func main() {
 	}
 	s := &fasthttp.Server{
 		Handler: requestHandler,
-		Name:    "PC Register API Server",
+		Name:    "Cloud Run API Server",
 	}
 	address := "0.0.0.0" + ":" + "28080"
 	if err := s.ListenAndServe(address); err != nil {
