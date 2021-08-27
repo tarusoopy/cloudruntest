@@ -5,3 +5,8 @@ steps:
       - '-t'
       - 'gcr.io/sdns-prd-273508/cloudruntest'
       - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/sdns-prd-273508/cloudruntest'
+    images: ['gcr.io/sdns-prd-273508/cloudruntest']
