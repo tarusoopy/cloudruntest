@@ -25,4 +25,4 @@ steps:
       - '--platform'
       - 'managed'
 images:
-  - gcr.io/sdns-prd-273508/cloudruntest
+  - 'gcr.io/sdns-prd-273508/cloudruntest'
