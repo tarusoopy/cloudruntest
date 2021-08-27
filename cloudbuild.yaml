@@ -9,4 +9,3 @@ steps:
     args:
       - 'push'
       - 'gcr.io/sdns-prd-273508/cloudruntest'
-    images: ['gcr.io/sdns-prd-273508/cloudruntest']
