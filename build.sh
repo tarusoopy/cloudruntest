@@ -1,6 +1,6 @@
 #!/bin/bash
 # gcloud builds submit --config CONFIG_FILE_PATH SOURCE_DIRECTORY
-gcloud builds submit --config
+gcloud builds submit
 
 ## Use Dockerfile build
 # gcloud builds submit --tag gcr.io/sdns-prd-273508/cloudruntest
