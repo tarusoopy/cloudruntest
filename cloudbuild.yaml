@@ -1,11 +1,19 @@
 steps:
+  # Build images by Cloud Build
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
       - '-t'
       - 'gcr.io/sdns-prd-273508/cloudruntest'
       - '.'
+  # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
       - 'gcr.io/sdns-prd-273508/cloudruntest'
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'cloudruntest', '--image', 'gcr.io/sdns-prd-273508/cloudruntest', '--region', 'asia-southeast1', '--platform', 'managed']
+images:
+  - gcr.io/sdns-prd-273508/cloudruntest
