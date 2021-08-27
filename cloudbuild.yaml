@@ -4,13 +4,13 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/sdns-prd-273508/cloudruntest'
+      - 'gcr.io/sdns-prd-273508/cloudruntest:$COMMIT_SHA'
       - '.'
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/sdns-prd-273508/cloudruntest'
+      - 'gcr.io/sdns-prd-273508/cloudruntest:$COMMIT_SHA'
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -19,10 +19,10 @@ steps:
       - 'deploy'
       - 'cloudruntest'
       - '--image'
-      - 'gcr.io/sdns-prd-273508/cloudruntest'
+      - 'gcr.io/sdns-prd-273508/cloudruntest:$COMMIT_SHA'
       - '--region'
       - 'asia-southeast1'
       - '--platform'
       - 'managed'
 images:
-  - 'gcr.io/sdns-prd-273508/cloudruntest'
+  - 'gcr.io/sdns-prd-273508/cloudruntest:$COMMIT_SHA'
