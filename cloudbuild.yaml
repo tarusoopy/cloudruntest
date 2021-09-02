@@ -20,6 +20,8 @@ steps:
       - 'cloudruntest'
       - '--image'
       - 'gcr.io/sdns-prd-273508/cloudruntest'
+      - '--port'
+      - '28080'
       - '--region'
       - 'asia-southeast1'
       - '--platform'
