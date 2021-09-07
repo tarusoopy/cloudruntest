@@ -12,8 +12,8 @@
 #CMD ["go", "run", "main.go"]
 
 
-#FROM golang:1.15.7-alpine as builder
-FROM golang:1.15.7-alpine
+FROM golang:1.15.7-alpine as builder
+#FROM golang:1.15.7-alpine
 
 ENV ROOT=/go/src/app
 WORKDIR ${ROOT}
